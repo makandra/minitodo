@@ -1,25 +1,23 @@
 <form action="/add">
-  <input type="text" name="description" placeholder="What needs to be done?">
+  <input type="text" name="task" placeholder="What needs to be done?">
   <button>Add</button>
 </form>
 
 
 <div class="tasks">
-  <% @tasks.each do |task| %>
-  
-      <% if task.completed? %>
-        <div class="task completed">
-                ✔ <%= task.description %>
-      <% else %>
-        <a class="task" href="/complete?description=<%= CGI.escape(task.description) %>">
-        ✔ <%= task.description %> 
-              
-      </a>
-      <% end %>
-        
+
+  <% @open_tasks.each do |task| %>
+    <a class="task open" href="/complete/<%= CGI.escape(task) %>">
+      ✔ <%= task %>
+    </a>
   <% end %>
+        
+  <% @completed_tasks.each do |task| %>
+    <div class="task completed">
+      ✔ <%= task %>
+    </div>
+  <% end %>
+
 </div>
 
 <a href="/clear_completed">Clear completed</a>
-
-

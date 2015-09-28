@@ -1,56 +1,30 @@
-class Task
-
-  def initialize(description, completed)
-    @description = description
-    @completed = completed
-  end
-  
-  def description
-    @description
-  end
-  
-  def completed?
-    @completed
-  end
-  
-  def complete
-    @completed = true
-  end
-
-end
-
-
-class TaskList
+class TaskManager
 
   def initialize
-    @tasks = []
+    @open_tasks = []
+    @completed_tasks = []
   end
   
-  def tasks
-    @tasks
+  def open_tasks
+    @open_tasks
+  end
+
+  def completed_tasks
+    @completed_tasks
   end
   
-  def add(description)
-    task = Task.new(description, false)
-    @tasks.push(task)
+  def add(task)
+    @open_tasks.push(task)
   end
   
-  def complete(description)
-    task = @tasks.find { |t| t.description == description }
-    if task.nil?
-      raise 'No such task'
-    end
-    task.complete
+  def complete(task)
+    @open_tasks.include?(task) or raise 'No such task'
+    @open_tasks.delete(task)
+    @completed_tasks.unshift(task)
   end
   
   def clear_completed
-    @tasks = @tasks.reject { |t| t.completed? }
+    @completed_tasks = []
   end
 
 end
-
-
-
-
-
-
