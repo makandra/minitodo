@@ -1,25 +1,25 @@
 require 'sinatra'
 require_relative 'model'
 
-task_manager = TaskManager.new
+master = TaskMaster.new
 
 get '/' do
-  @open_tasks = task_manager.open_tasks
-  @completed_tasks = task_manager.completed_tasks
+  @open_tasks = master.open_tasks
+  @completed_tasks = master.completed_tasks
   erb :list
 end
 
 get '/add' do
-  task_manager.add(params['task'])
+  master.add(params['task'])
   redirect to('/')
 end
 
 get '/complete/:task' do
-  task_manager.complete(params['task'])
+  master.complete(params['task'])
   redirect to('/')
 end
 
 get '/clear_completed' do
-  task_manager.clear_completed
+  master.clear_completed
   redirect to('/')
 end

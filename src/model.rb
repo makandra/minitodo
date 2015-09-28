@@ -1,4 +1,4 @@
-class TaskManager
+class TaskMaster
 
   def initialize
     @open_tasks = []
