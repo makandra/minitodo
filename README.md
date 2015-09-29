@@ -2,7 +2,7 @@
 
 A simple to-do list to demo test-driven development (TDD).
 
-## Running the application
+### Running the application
 
 - Install Ruby 2.1
 - In the project directory, run `bundle install`
