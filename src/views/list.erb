@@ -1,21 +1,16 @@
 <form action="/add">
-  <input type="text" name="task" placeholder="What needs to be done?">
+  <input type="text" name="task" placeholder="What needs to be done?" autofocus>
   <button>Add</button>
 </form>
 
-
 <div class="tasks">
 
-  <% @open_tasks.each do |task| %>
-    <a class="task open" href="/complete/<%= CGI.escape(task) %>">
-      ✔ <%= task %>
-    </a>
+  <% for task in @open_tasks %>
+    <a class="task open" href="/complete?task=<%= CGI.escape(task) %>"><%= task %></a>
   <% end %>
-        
-  <% @completed_tasks.each do |task| %>
-    <div class="task completed">
-      ✔ <%= task %>
-    </div>
+
+  <% for task in @completed_tasks %>
+    <del class="task completed"><%= task %></del>
   <% end %>
 
 </div>

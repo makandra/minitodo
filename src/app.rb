@@ -1,5 +1,5 @@
 require 'sinatra'
-require_relative 'model'
+require_relative 'task_master'
 
 master = TaskMaster.new
 
@@ -14,7 +14,7 @@ get '/add' do
   redirect to('/')
 end
 
-get '/complete/:task' do
+get '/complete' do
   master.complete(params['task'])
   redirect to('/')
 end

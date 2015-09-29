@@ -1,6 +1,15 @@
-require 'model'
+require 'task_master'
 
 describe TaskMaster do
+
+  describe 'new' do
+
+    it 'creates a new to-do list with no open tasks' do
+      master = TaskMaster.new
+      expect(master.open_tasks).to eq []
+    end
+
+  end
 
   describe 'add' do
     
@@ -33,7 +42,7 @@ describe TaskMaster do
   
   describe 'clear_completed' do
   
-    it 'removes completed tasks from the master' do
+    it 'removes all completed tasks' do
       master = TaskMaster.new
       master.add('Milk')
       master.add('Sugar')
