@@ -2,9 +2,8 @@ require 'app'
 
 Capybara.app = Sinatra::Application
 
-describe 'application' do
-
-  it 'lets the user add tasks, mark them as completed and clear completed tasks' do
+feature 'Task management' do
+  scenario 'User adds tasks, marks them as completed and clears completed tasks' do
     visit '/'
 
     fill_in 'task', with: 'Milk'
@@ -30,6 +29,6 @@ describe 'application' do
     expect(page).to have_content('Milk')
     expect(page).to_not have_content('Honey')
     expect(page).to_not have_content('Toast')
-  end
 
+  end
 end

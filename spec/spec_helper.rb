@@ -1,6 +1,7 @@
 $LOAD_PATH.push File.join(Dir.pwd, 'src')
 
 require 'capybara'
+require 'capybara/rspec'
 require 'selenium-webdriver'
 require 'active_support/all'
 
