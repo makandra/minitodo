@@ -5,4 +5,5 @@ gem 'rspec'
 gem 'activesupport'
 
 gem 'capybara'
-gem 'selenium-webdriver'
+gem 'poltergeist'
+gem 'capybara-screenshot'
