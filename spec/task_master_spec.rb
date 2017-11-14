@@ -13,7 +13,7 @@ describe TaskMaster do
 
   describe 'add' do
     
-    it 'adds the given task to the master of open tasks' do
+    it 'adds the given task to the list of open tasks' do
       master = TaskMaster.new
       master.add 'Milk'
       master.add 'Sugar'
