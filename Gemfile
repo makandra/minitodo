@@ -6,3 +6,4 @@ gem 'activesupport'
 
 gem 'capybara'
 gem 'selenium-webdriver'
+gem 'puma'
