@@ -12,13 +12,8 @@ You can now access the application at <http://localhost:4567>. Restarting the ap
 
 ### Running unit tests
 
-- In the project directory, run `rspec spec/task_master_spec.rb`.
+- In the project directory, run `rspec spec/task_list_spec.rb`.
 
 ### Running UI tests
 
 - In the project directory, run `rspec spec/app_spec.rb`.
-
-
-
-
-

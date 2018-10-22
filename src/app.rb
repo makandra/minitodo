@@ -1,25 +1,25 @@
 require 'sinatra'
-require_relative 'task_master'
+require_relative 'task_list'
 
-master = TaskMaster.new
+list = TaskList.new
 
 get '/' do
-  @open_tasks = master.open_tasks
-  @completed_tasks = master.completed_tasks
+  @open_tasks = list.open_tasks
+  @completed_tasks = list.completed_tasks
   erb :list
 end
 
 get '/add' do
-  master.add(params['task'])
+  list.add(params['task'])
   redirect to('/')
 end
 
 get '/complete' do
-  master.complete(params['task'])
+  list.complete(params['task'])
   redirect to('/')
 end
 
 get '/clear_completed' do
-  master.clear_completed
+  list.clear_completed
   redirect to('/')
 end
