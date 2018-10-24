@@ -2,9 +2,12 @@
 
 A simple to-do list to demo test-driven development (TDD).
 
+The application can be found in the `src` folder.
+Tests can be found in the `spec` folder.
+
 ### Running the application
 
-- Install Ruby 2.1
+- Install Ruby 2.5
 - In the project directory, run `bundle install`
 - `ruby src/app.rb`
 
